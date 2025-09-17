@@ -1,0 +1,104 @@
+{
+    "key": "group_68a72417ab106",
+    "title": "助成金詳細",
+    "fields": [
+        {
+            "key": "field_664e1e8b3b729",
+            "label": "AIによる3行要約",
+            "name": "ai_summary",
+            "type": "wysiwyg",
+            "instructions": "公募要領などの要点を3行程度でまとめたものを入力してください。箇条書きが推奨です。",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0
+        },
+        {
+            "key": "field_664e1e8b3b769",
+            "label": "最大金額（表示用）",
+            "name": "max_amount",
+            "type": "text",
+            "instructions": "例: 200万円, 50万円\/人",
+            "placeholder": "200万円"
+        },
+        {
+            "key": "field_max_amount_numeric",
+            "label": "最大金額（数値）",
+            "name": "max_amount_numeric",
+            "type": "number",
+            "instructions": "検索・ソート用の数値（円単位）",
+            "placeholder": "2000000"
+        },
+        {
+            "key": "field_664e1e8b3b7a5",
+            "label": "締切日（ソート用）",
+            "name": "deadline_date",
+            "type": "date_picker",
+            "display_format": "Y\/m\/d",
+            "return_format": "Ymd"
+        },
+        {
+            "key": "field_664e1fd538c3e",
+            "label": "締切（表示用テキスト）",
+            "name": "deadline_text",
+            "type": "text",
+            "instructions": "例: 2024年12月27日, 通年"
+        },
+        {
+            "key": "field_664e1e8b3b7e0",
+            "label": "公募ステータス",
+            "name": "application_status",
+            "type": "select",
+            "choices": {
+                "open": "募集中",
+                "closed": "募集終了",
+                "upcoming": "募集開始前"
+            },
+            "default_value": "open",
+            "ui": 1
+        },
+        {
+            "key": "field_organization",
+            "label": "実施組織",
+            "name": "organization",
+            "type": "text",
+            "placeholder": "経済産業省"
+        },
+        {
+            "key": "field_difficulty_level",
+            "label": "申請難易度",
+            "name": "difficulty_level",
+            "type": "select",
+            "choices": {
+                "easy": "易しい",
+                "medium": "普通",
+                "hard": "難しい"
+            },
+            "default_value": "medium",
+            "ui": 1
+        },
+        {
+            "key": "field_664e1e8b3b819",
+            "label": "公式サイトURL",
+            "name": "official_url",
+            "type": "url"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "grant"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
+}

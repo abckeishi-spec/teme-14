@@ -1,0 +1,1152 @@
+/*
+Theme Name: Grant Insight Perfect - Tailwind CSS Play CDN Edition
+Description: 助成金・補助金情報サイト用WordPressテーマ - Tailwind CSS Play CDN完全対応版。AI Chatbot機能、助成金検索システム、ツールセクション統合。
+Version: 5.0-tailwind-perfect
+Author: Grant Insight Team
+Text Domain: grant-insight-perfect
+*/
+
+/* ==========================================================================
+   Tailwind CSS Play CDN Integration Base
+   ========================================================================== */
+
+/* ==========================================================================
+   🚨 緊急CLS防止・Tailwind競合回避システム
+   ========================================================================== */
+
+/* 最優先 - CLS完全防止 */
+* {
+    box-sizing: border-box !important;
+}
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    line-height: 1.6 !important;
+    color: #1f2937 !important;
+    background-color: #ffffff !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* ヘッダー強制安定化 */
+.header-main {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    background: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    overflow: visible !important;
+    transition: none !important;
+    contain: layout style paint !important;
+}
+
+.header-container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 1rem 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: 80px !important;
+    gap: 1rem !important;
+    flex-wrap: nowrap !important;
+}
+
+/* ロゴ完全固定 */
+.site-logo {
+    flex-shrink: 0 !important;
+    min-width: 0 !important;
+    max-width: 50% !important;
+}
+
+.logo-main img {
+    height: 50px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    object-fit: contain !important;
+    image-rendering: -webkit-optimize-contrast !important;
+    display: block !important;
+}
+
+/* メニュー表示制御 */
+.desktop-nav {
+    display: none !important;
+}
+
+.grant-menu {
+    display: none !important;
+}
+
+.mobile-menu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+@media (min-width: 1024px) {
+    .desktop-nav {
+        display: flex !important;
+    }
+    .grant-menu {
+        display: flex !important;
+    }
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+}
+
+/* モバイルメニュー強制修正 */
+.mobile-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 320px !important;
+    max-width: 85vw !important;
+    height: 100vh !important;
+    background: #ffffff !important;
+    z-index: 1100 !important;
+    transform: translateX(100%) !important;
+    transition: transform 0.3s ease-in-out !important;
+    overflow-y: auto !important;
+    box-shadow: -10px 0 25px rgba(0,0,0,0.15) !important;
+}
+
+.mobile-menu.active {
+    transform: translateX(0) !important;
+}
+
+.mobile-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,0.5) !important;
+    z-index: 1050 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+}
+
+.mobile-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 検索モーダル強制修正 */
+.grant-search-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,0.5) !important;
+    z-index: 1200 !important;
+    backdrop-filter: blur(4px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    overflow-y: auto !important;
+    padding: 1rem !important;
+}
+
+.grant-search-modal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.modal-content {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    max-width: 800px !important;
+    width: 100% !important;
+    margin: 2rem auto !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    transform: scale(0.95) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.grant-search-modal.active .modal-content {
+    transform: scale(1) !important;
+}
+
+/* モバイル対応 */
+@media (max-width: 640px) {
+    .header-container {
+        padding: 0.75rem 1rem !important;
+    }
+    
+    .site-logo {
+        max-width: 65% !important;
+    }
+    
+    .logo-main img {
+        height: 40px !important;
+    }
+    
+    .site-title-simple {
+        display: none !important;
+    }
+    
+    .mobile-menu {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .modal-content {
+        margin: 1rem auto !important;
+        border-radius: 12px !important;
+    }
+}
+
+/* Tailwind Play CDN 競合回避 */
+.header-main *,
+.mobile-menu *,
+.grant-search-modal * {
+    box-sizing: border-box !important;
+}
+
+/* フォントの確実な適用 */
+.header-main,
+.mobile-menu,
+.grant-search-modal {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* JavaScript読み込み前の表示確保 */
+.header-loading .desktop-nav,
+.header-loading .grant-menu {
+    opacity: 0.7 !important;
+}
+
+.header-loaded .desktop-nav,
+.header-loaded .grant-menu {
+    opacity: 1 !important;
+}
+
+/* WordPressテーマ基本設定 */
+body {
+    @apply font-sans leading-relaxed text-gray-800 bg-gray-50;
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* WordPress管理バー対応 */
+.admin-bar .fixed-top-0 {
+    @apply top-8;
+}
+
+/* ==========================================================================
+   Grant Insight Perfect Theme - Core Styles
+   ========================================================================== */
+
+/* メインヘッダー */
+.site-header {
+    @apply bg-white shadow-lg border-b-2 border-emerald-500 sticky top-0 z-50;
+}
+
+.site-navigation {
+    @apply bg-emerald-600 text-white;
+}
+
+.main-navigation ul {
+    @apply flex flex-wrap justify-center space-x-6 py-3;
+}
+
+.main-navigation li {
+    @apply relative;
+}
+
+.main-navigation a {
+    @apply text-white hover:text-emerald-200 transition-colors duration-300 px-3 py-2 rounded;
+}
+
+.main-navigation a:hover {
+    @apply bg-emerald-700;
+}
+
+/* サブメニュー */
+.main-navigation ul ul {
+    @apply absolute top-full left-0 bg-emerald-700 shadow-xl rounded-b-lg min-w-48 py-2 opacity-0 invisible transform -translate-y-2 transition-all duration-300;
+}
+
+.main-navigation li:hover ul {
+    @apply opacity-100 visible translate-y-0;
+}
+
+.main-navigation ul ul a {
+    @apply block px-4 py-2 text-sm hover:bg-emerald-800;
+}
+
+/* ==========================================================================
+   AI Chatbot Styles - 完全修正版（Tailwind CSS Play CDN対応）
+   ========================================================================== */
+
+/* チャットボット本体 - 位置を左下に修正 */
+.ai-chatbot {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    z-index: 1000 !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+/* チャットボットトグルボタン - Tailwind競合回避 */
+.chatbot-toggle {
+    position: relative !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    color: white !important;
+    font-size: 24px !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.chatbot-toggle:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 12px 35px rgba(5, 150, 105, 0.6) !important;
+    background: linear-gradient(135deg, #047857, #065f46) !important;
+}
+
+.chatbot-toggle:active {
+    transform: translateY(0) scale(0.95) !important;
+}
+
+.chatbot-toggle i {
+    color: white !important;
+    font-size: 24px !important;
+}
+
+/* 通知バッジ */
+.chatbot-notification {
+    position: absolute !important;
+    top: -5px !important;
+    right: -5px !important;
+    width: 24px !important;
+    height: 24px !important;
+    background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    border: 3px solid white !important;
+    animation: chatbot-pulse 2s infinite !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+@keyframes chatbot-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* チャットボットモーダル - 位置とサイズ修正 */
+.chatbot-modal {
+    position: absolute !important;
+    bottom: 80px !important;
+    left: 0 !important;
+    width: 380px !important;
+    height: 500px !important;
+    background: white !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(20px) scale(0.95) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: 1px solid #e5e7eb !important;
+    overflow: hidden !important;
+    z-index: 1001 !important;
+}
+
+.chatbot-modal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+}
+
+/* チャットボットコンテナ */
+.chatbot-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    background: white !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+/* チャットボットヘッダー */
+.chatbot-header {
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    color: white !important;
+    padding: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.chatbot-title {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    color: white !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+.chatbot-close {
+    font-size: 24px !important;
+    cursor: pointer !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    transition: all 0.2s ease !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    outline: none !important;
+}
+
+.chatbot-close:hover {
+    color: white !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* メッセージエリア */
+.chatbot-messages {
+    flex: 1 !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+    background: #f9fafb !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    max-height: 350px !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+.chatbot-messages::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+    background: #f1f5f9 !important;
+    border-radius: 3px !important;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background: #cbd5e1 !important;
+    border-radius: 3px !important;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8 !important;
+}
+
+/* メッセージバブル */
+.message {
+    max-width: 85% !important;
+    padding: 12px 16px !important;
+    border-radius: 18px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    word-wrap: break-word !important;
+    animation: messageSlideIn 0.3s ease-out !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.bot {
+    background: linear-gradient(135deg, #e0f2fe, #b3e5fc) !important;
+    color: #0f172a !important;
+    align-self: flex-start !important;
+    border-bottom-left-radius: 6px !important;
+    border: 1px solid #bae6fd !important;
+}
+
+.message.user {
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    color: white !important;
+    align-self: flex-end !important;
+    border-bottom-right-radius: 6px !important;
+    box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3) !important;
+}
+
+/* 入力エリア */
+.chatbot-input-area {
+    padding: 20px !important;
+    background: white !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+.chatbot-input-container {
+    display: flex !important;
+    gap: 12px !important;
+    align-items: center !important;
+}
+
+.chatbot-input {
+    flex: 1 !important;
+    padding: 12px 16px !important;
+    border: 2px solid #e5e7eb !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: all 0.2s ease !important;
+    background: #f9fafb !important;
+    color: #1f2937 !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+.chatbot-input:focus {
+    border-color: #059669 !important;
+    background: white !important;
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1) !important;
+}
+
+.chatbot-input::placeholder {
+    color: #9ca3af !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+.chatbot-send {
+    padding: 12px 20px !important;
+    background: linear-gradient(135deg, #059669, #047857) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 25px !important;
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    min-width: 60px !important;
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+    outline: none !important;
+}
+
+.chatbot-send:hover {
+    background: linear-gradient(135deg, #047857, #065f46) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.4) !important;
+}
+
+.chatbot-send:active {
+    transform: translateY(0) !important;
+}
+
+.chatbot-send:disabled {
+    background: #9ca3af !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ローディングアニメーション */
+.typing-indicator {
+    display: flex !important;
+    gap: 4px !important;
+    padding: 12px 16px !important;
+    background: #e5e7eb !important;
+    border-radius: 18px !important;
+    border-bottom-left-radius: 6px !important;
+    align-self: flex-start !important;
+    max-width: 85% !important;
+}
+
+.typing-dot {
+    width: 8px !important;
+    height: 8px !important;
+    background: #6b7280 !important;
+    border-radius: 50% !important;
+    animation: typingAnimation 1.4s infinite !important;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s !important;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s !important;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+/* レスポンシブ対応 - Chatbot */
+@media (max-width: 480px) {
+    .ai-chatbot {
+        bottom: 15px !important;
+        left: 15px !important;
+    }
+    
+    .chatbot-modal {
+        width: calc(100vw - 40px) !important;
+        max-width: 350px !important;
+        height: 450px !important;
+        left: -10px !important;
+    }
+    
+    .chatbot-toggle {
+        width: 55px !important;
+        height: 55px !important;
+        font-size: 22px !important;
+    }
+}
+
+/* Tailwind CSS競合回避 - Chatbot専用 */
+.ai-chatbot * {
+    box-sizing: border-box !important;
+}
+
+.ai-chatbot button {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+.ai-chatbot input {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif !important;
+}
+
+/* ダークモード対応 - Chatbot */
+@media (prefers-color-scheme: dark) {
+    .chatbot-modal {
+        background: #1f2937 !important;
+        border-color: #374151 !important;
+    }
+    
+    .chatbot-container {
+        background: #1f2937 !important;
+    }
+    
+    .chatbot-messages {
+        background: #111827 !important;
+    }
+    
+    .message.bot {
+        background: #374151 !important;
+        color: #f9fafb !important;
+        border-color: #4b5563 !important;
+    }
+    
+    .chatbot-input-area {
+        background: #1f2937 !important;
+        border-color: #374151 !important;
+    }
+    
+    .chatbot-input {
+        background: #111827 !important;
+        border-color: #374151 !important;
+        color: #f9fafb !important;
+    }
+    
+    .chatbot-input:focus {
+        background: #1f2937 !important;
+    }
+}
+
+/* ==========================================================================
+   助成金検索システム統合スタイル
+   ========================================================================== */
+
+.grant-search-system {
+    @apply bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl shadow-xl p-8 mb-8 border border-emerald-200;
+}
+
+.search-header {
+    @apply text-center mb-8;
+}
+
+.search-title {
+    @apply text-3xl font-bold text-emerald-700 mb-4;
+}
+
+.search-subtitle {
+    @apply text-lg text-gray-600 mb-6;
+}
+
+.search-form {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6;
+}
+
+.form-group {
+    @apply space-y-2;
+}
+
+.form-label {
+    @apply block text-sm font-semibold text-gray-700;
+}
+
+.form-input, .form-select {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-200 bg-white;
+}
+
+.search-buttons {
+    @apply flex flex-col sm:flex-row gap-4 justify-center;
+}
+
+.btn-search {
+    @apply bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-3 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl;
+}
+
+.btn-reset {
+    @apply bg-gray-500 text-white px-8 py-3 rounded-lg hover:bg-gray-600 transition-all duration-200 font-semibold;
+}
+
+/* 検索結果表示 */
+.search-results {
+    @apply mt-8 space-y-6;
+}
+
+.result-item {
+    @apply bg-white rounded-xl shadow-lg p-6 border-l-4 border-emerald-500 hover:shadow-xl transition-shadow duration-300;
+}
+
+.result-title {
+    @apply text-xl font-bold text-emerald-700 mb-3;
+}
+
+.result-meta {
+    @apply text-sm text-gray-600 mb-4 flex flex-wrap gap-4;
+}
+
+.result-description {
+    @apply text-gray-800 leading-relaxed mb-4;
+}
+
+.result-actions {
+    @apply flex gap-3;
+}
+
+.btn-detail {
+    @apply bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-emerald-600 transition-colors duration-200 text-sm font-medium;
+}
+
+.btn-bookmark {
+    @apply bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors duration-200 text-sm font-medium;
+}
+
+/* ==========================================================================
+   ツールセクション統合スタイル
+   ========================================================================== */
+
+.recommended-tools-section {
+    @apply py-16 bg-gradient-to-b from-white to-gray-50;
+}
+
+.tools-container {
+    @apply max-w-7xl mx-auto px-4;
+}
+
+.tools-header {
+    @apply text-center mb-12;
+}
+
+.tools-title {
+    @apply text-4xl font-bold text-gray-800 mb-4;
+}
+
+.tools-subtitle {
+    @apply text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed;
+}
+
+.tools-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.tool-card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-gray-100 hover:border-emerald-200;
+}
+
+.tool-card:hover {
+    @apply transform -translate-y-2;
+}
+
+.tool-icon {
+    @apply w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl;
+}
+
+.tool-content {
+    @apply p-6;
+}
+
+.tool-title {
+    @apply text-xl font-bold text-gray-800 mb-3 group-hover:text-emerald-700 transition-colors duration-200;
+}
+
+.tool-description {
+    @apply text-gray-600 leading-relaxed mb-4;
+}
+
+.tool-features {
+    @apply space-y-2 mb-6;
+}
+
+.tool-feature {
+    @apply flex items-center text-sm text-gray-700;
+}
+
+.tool-feature-icon {
+    @apply text-emerald-500 mr-2;
+}
+
+.tool-actions {
+    @apply flex gap-3;
+}
+
+.btn-tool-primary {
+    @apply bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-200 font-medium flex-1 text-center;
+}
+
+.btn-tool-secondary {
+    @apply border border-emerald-500 text-emerald-600 px-6 py-2 rounded-lg hover:bg-emerald-50 transition-all duration-200 font-medium;
+}
+
+/* ==========================================================================
+   コンテンツエリア共通スタイル
+   ========================================================================== */
+
+.site-main {
+    @apply min-h-screen py-8;
+}
+
+.content-container {
+    @apply max-w-7xl mx-auto px-4;
+}
+
+/* 記事・ページスタイル */
+.entry-header {
+    @apply mb-8;
+}
+
+.entry-title {
+    @apply text-4xl font-bold text-gray-800 mb-4 leading-tight;
+}
+
+.entry-meta {
+    @apply text-gray-600 text-sm flex flex-wrap gap-4 mb-6;
+}
+
+.entry-content {
+    @apply prose prose-lg max-w-none prose-emerald;
+}
+
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+    @apply text-emerald-700 font-bold;
+}
+
+.entry-content a {
+    @apply text-emerald-600 hover:text-emerald-800 transition-colors duration-200;
+}
+
+/* サイドバー */
+.sidebar {
+    @apply space-y-8;
+}
+
+.widget {
+    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+}
+
+.widget-title {
+    @apply text-xl font-bold text-gray-800 mb-4 pb-2 border-b-2 border-emerald-500;
+}
+
+/* フッター */
+.site-footer {
+    @apply bg-gray-800 text-white py-12 mt-16;
+}
+
+.footer-content {
+    @apply max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.footer-section h3 {
+    @apply text-xl font-bold mb-4 text-emerald-400;
+}
+
+.footer-section ul {
+    @apply space-y-2;
+}
+
+.footer-section a {
+    @apply text-gray-300 hover:text-emerald-400 transition-colors duration-200;
+}
+
+.footer-bottom {
+    @apply border-t border-gray-700 mt-8 pt-8 text-center text-gray-400;
+}
+
+/* ==========================================================================
+   レスポンシブ対応 - モバイルファースト
+   ========================================================================== */
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .search-form {
+        @apply grid-cols-1 gap-4;
+    }
+    
+    .tools-grid {
+        @apply grid-cols-1 gap-6;
+    }
+    
+    .main-navigation ul {
+        @apply flex-col space-x-0 space-y-2;
+    }
+    
+    .entry-title {
+        @apply text-2xl;
+    }
+}
+
+/* タブレット対応 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .search-form {
+        @apply grid-cols-2;
+    }
+    
+    .tools-grid {
+        @apply grid-cols-2;
+    }
+}
+
+/* ==========================================================================
+   アニメーション・トランジション
+   ========================================================================== */
+
+/* ページ読み込みアニメーション */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ローディングアニメーション */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    @apply animate-spin;
+}
+
+/* ホバーエフェクト */
+.hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+/* ==========================================================================
+   ユーティリティクラス
+   ========================================================================== */
+
+/* テキストグラデーション */
+.text-gradient {
+    @apply bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent;
+}
+
+/* シャドウバリエーション */
+.shadow-emerald {
+    box-shadow: 0 10px 25px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -2px rgba(16, 185, 129, 0.05);
+}
+
+/* ボーダーグラデーション */
+.border-gradient {
+    @apply bg-gradient-to-r from-emerald-500 to-teal-600 p-0.5 rounded-lg;
+}
+
+.border-gradient-inner {
+    @apply bg-white rounded-lg;
+}
+
+/* ==========================================================================
+   WordPress固有スタイル
+   ========================================================================== */
+
+/* WordPress埋め込みコンテンツ */
+.wp-block-embed {
+    @apply my-8;
+}
+
+/* WordPress画像 */
+.wp-block-image {
+    @apply my-6;
+}
+
+.wp-block-image img {
+    @apply rounded-lg shadow-lg;
+}
+
+/* WordPressボタン */
+.wp-block-button__link {
+    @apply bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-3 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-200 no-underline font-medium;
+}
+
+/* WordPress引用 */
+.wp-block-quote {
+    @apply border-l-4 border-emerald-500 pl-6 italic text-gray-700 my-8;
+}
+
+
+
+/* ==========================================================================
+   パフォーマンス最適化
+   ========================================================================== */
+
+/* 重要でない画像の遅延読み込み */
+img[loading="lazy"] {
+    @apply transition-opacity duration-300;
+}
+
+/* フォントの先読み（functions.phpで設定） */
+.font-preload {
+    font-display: swap;
+}
+
+/* テーマディレクトリ/style.css の最後に追加 */
+
+/* ===================================
+   統合検索システム用スタイル
+   =================================== */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* ローディング状態の統一 */
+.search-loading-unified {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* 検索フィールドの統一スタイル */
+.search-field-unified {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+
+/* アクティブフィルターの表示 */
+.active-filter-indicator {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background: #ef4444;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* グリッドレイアウトの強制適用 */
+.grants-grid {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+}
+
+@media (min-width: 768px) {
+    .grants-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .grants-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* カードの高さ調整 */
+.grant-card-modern {
+    height: 100%;
+}
+
+.grant-card-modern > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* line-clampのサポート */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+
+/* ==========================================================================
+   エンドオブファイル
+   ========================================================================== */
+
+/* Tailwind CSS Play CDN Integration Complete */
+/* Grant Insight Perfect Theme v5.0-tailwind-perfect */
+/* AI Chatbot Fixed, Search System, Tools Section - All Integrated */
