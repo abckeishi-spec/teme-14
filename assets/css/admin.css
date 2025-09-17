@@ -1,0 +1,305 @@
+/* WordPress Admin Styles for Grant Info Theme
+   Version: 4.0.0
+   Updated: 2025-09-17
+   ================================================== */
+
+/* Admin Bar Customization */
+#wpadminbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#wpadminbar .ab-top-menu > li > a,
+#wpadminbar .ab-top-menu > li > .ab-item {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#wpadminbar .ab-top-menu > li:hover > a,
+#wpadminbar .ab-top-menu > li:hover > .ab-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* ACF Field Groups */
+.acf-field {
+    padding: 15px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.acf-field:last-child {
+    border-bottom: none;
+}
+
+.acf-label label {
+    font-weight: 600;
+    color: #23282d;
+    font-size: 14px;
+}
+
+.acf-input input[type="text"],
+.acf-input input[type="number"],
+.acf-input input[type="email"],
+.acf-input input[type="url"],
+.acf-input textarea,
+.acf-input select {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Custom Post Type UI */
+.post-type-grant .row-actions {
+    visibility: visible;
+}
+
+.post-type-grant .column-title {
+    font-weight: 600;
+}
+
+/* Grant Meta Boxes */
+.grant-meta-box {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.grant-meta-box h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #23282d;
+}
+
+.grant-meta-box .field-group {
+    margin-bottom: 15px;
+}
+
+.grant-meta-box label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.grant-meta-box input,
+.grant-meta-box textarea,
+.grant-meta-box select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: white;
+}
+
+.grant-meta-box input:focus,
+.grant-meta-box textarea:focus,
+.grant-meta-box select:focus {
+    border-color: #5b9dd9;
+    box-shadow: 0 0 2px rgba(30, 140, 190, 0.8);
+    outline: none;
+}
+
+/* Dashboard Widget */
+.grant-dashboard-widget {
+    padding: 0;
+}
+
+.grant-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
+.grant-stat-card {
+    background: white;
+    padding: 15px;
+    border-left: 4px solid #0073aa;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.grant-stat-card .stat-number {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0073aa;
+    margin-bottom: 5px;
+}
+
+.grant-stat-card .stat-label {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Status Badges */
+.grant-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.grant-status.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.grant-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.grant-status.closed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Quick Edit */
+.inline-edit-row fieldset.inline-edit-col-grant {
+    width: 100%;
+}
+
+.inline-edit-row fieldset.inline-edit-col-grant label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Media Library Enhancement */
+.attachment-details .setting.grant-meta {
+    border-top: 1px solid #ddd;
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+/* Custom Taxonomy UI */
+.term-grant_category-wrap,
+.term-grant_tag-wrap {
+    max-width: 95%;
+}
+
+/* Settings Page */
+.grant-settings-wrap {
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.grant-settings-header {
+    background: white;
+    border: 1px solid #ccd0d4;
+    border-bottom: none;
+    padding: 20px;
+}
+
+.grant-settings-header h1 {
+    margin: 0;
+    color: #23282d;
+}
+
+.grant-settings-body {
+    background: white;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+}
+
+.grant-settings-section {
+    margin-bottom: 30px;
+}
+
+.grant-settings-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Import/Export UI */
+.grant-import-export {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.import-section,
+.export-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.import-section h3,
+.export-section h3 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+/* Admin Notices */
+.notice.grant-notice {
+    border-left-width: 4px;
+    padding: 12px;
+}
+
+.notice.grant-notice.notice-success {
+    border-left-color: #46b450;
+}
+
+.notice.grant-notice.notice-error {
+    border-left-color: #dc3232;
+}
+
+.notice.grant-notice.notice-warning {
+    border-left-color: #ffb900;
+}
+
+.notice.grant-notice.notice-info {
+    border-left-color: #00a0d2;
+}
+
+/* Responsive Tables */
+@media screen and (max-width: 782px) {
+    .grant-meta-box .field-group {
+        margin-bottom: 20px;
+    }
+    
+    .grant-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .grant-import-export {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .grant-meta-box {
+        background: #1e1e1e;
+        border-color: #2c3338;
+    }
+    
+    .grant-meta-box h3 {
+        color: #f0f0f0;
+        border-color: #2c3338;
+    }
+    
+    .grant-stat-card {
+        background: #1e1e1e;
+        box-shadow: 0 1px 1px rgba(255, 255, 255, 0.04);
+    }
+}
+
+/* Print Styles */
+@media print {
+    #adminmenumain,
+    #wpadminbar,
+    .grant-settings-header,
+    .notice {
+        display: none;
+    }
+    
+    .grant-settings-body {
+        border: none;
+        padding: 0;
+    }
+}
